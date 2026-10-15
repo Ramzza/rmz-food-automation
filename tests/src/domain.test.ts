@@ -13,7 +13,7 @@ import {
   type MealSlot,
   type NutrientValues,
   type Recipe
-} from "../src/domain.js";
+} from "../../src/domain.js";
 
 const catalogItem = (overrides: Partial<CatalogItem> = {}): CatalogItem => ({
   id: "oats",
