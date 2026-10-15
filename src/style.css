@@ -1,0 +1,418 @@
+:root {
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #1b2821;
+  background: #f4f7f2;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  font-smooth: always;
+  --green: #28543d;
+  --green-dark: #163d2a;
+  --line: #dce5dc;
+  --muted: #607066;
+  --panel: #ffffff;
+  --soft-green: #e8f0e8;
+  --warning: #fff5dd;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+a {
+  color: #205e3a;
+  text-underline-offset: 0.16em;
+}
+
+a:hover {
+  color: #133d25;
+}
+
+.shell {
+  width: min(1060px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 42px 0 56px;
+}
+
+.hero {
+  padding: 18px 4px 28px;
+}
+
+.eyebrow {
+  margin: 0 0 9px;
+  color: var(--green);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.13em;
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+  margin-top: 0;
+}
+
+h1 {
+  max-width: 740px;
+  margin-bottom: 12px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2.3rem, 6vw, 4.2rem);
+  font-weight: 500;
+  letter-spacing: -0.045em;
+  line-height: 1.03;
+}
+
+.intro {
+  max-width: 720px;
+  margin-bottom: 0;
+  color: var(--muted);
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.notice {
+  margin-bottom: 18px;
+  padding: 18px 20px;
+  border: 1px solid #ebdba9;
+  border-radius: 14px;
+  background: var(--warning);
+}
+
+.notice p {
+  margin: 6px 0 0;
+  color: #625635;
+  line-height: 1.55;
+}
+
+.panel {
+  margin: 18px 0;
+  padding: clamp(18px, 3vw, 28px);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: var(--panel);
+  box-shadow: 0 8px 30px rgb(25 58 38 / 4%);
+}
+
+.section-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 18px;
+  margin-bottom: 18px;
+}
+
+.section-heading h2,
+.footer h2 {
+  margin-bottom: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.45rem, 3vw, 2rem);
+  font-weight: 500;
+  letter-spacing: -0.025em;
+}
+
+.muted {
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.data-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 20px;
+}
+
+.data-field,
+.date-field,
+.file-field,
+.quantity-field {
+  display: grid;
+  gap: 8px;
+  color: #34473b;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+textarea,
+input[type="date"],
+input[type="number"],
+select {
+  width: 100%;
+  min-width: 0;
+  border: 1px solid #cbd8cb;
+  border-radius: 9px;
+  background: #fbfdfb;
+  color: #1b2821;
+}
+
+textarea {
+  min-height: 170px;
+  padding: 11px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  resize: vertical;
+}
+
+input[type="date"],
+input[type="number"],
+select {
+  min-height: 42px;
+  padding: 8px 10px;
+}
+
+textarea:focus,
+input:focus,
+select:focus,
+button:focus-visible {
+  outline: 3px solid #a5c9a9;
+  outline-offset: 2px;
+}
+
+.date-field {
+  min-width: 190px;
+}
+
+.actions,
+.upload-row {
+  display: flex;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.button {
+  min-height: 44px;
+  padding: 10px 16px;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 750;
+  transition: background-color 120ms ease, transform 120ms ease;
+}
+
+.button:hover:not(:disabled) {
+  transform: translateY(-1px);
+}
+
+.button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.button-primary {
+  background: var(--green);
+  color: white;
+}
+
+.button-primary:hover:not(:disabled) {
+  background: var(--green-dark);
+}
+
+.button-secondary {
+  border-color: #cbd8cb;
+  background: var(--soft-green);
+  color: var(--green-dark);
+}
+
+.status {
+  min-height: 1.5em;
+  margin: 13px 0 0;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.status-error {
+  color: #a02620;
+  font-weight: 700;
+}
+
+.empty-state {
+  padding: 18px;
+  border: 1px dashed #cbd8cb;
+  border-radius: 12px;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+.day-card {
+  margin: 16px 0;
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: #fcfdfb;
+}
+
+.day-card h3 {
+  margin-bottom: 12px;
+  color: var(--green-dark);
+  font-size: 1.15rem;
+}
+
+.meal-card {
+  padding: 13px 0;
+  border-top: 1px solid #e8eee7;
+}
+
+.meal-card h4 {
+  margin-bottom: 7px;
+  font-size: 1rem;
+}
+
+.nutrition-line {
+  margin: 4px 0;
+  color: #4f6155;
+  font-size: 0.87rem;
+  line-height: 1.5;
+}
+
+.meal-card > a {
+  display: inline-block;
+  margin-top: 3px;
+  font-size: 0.86rem;
+}
+
+.ingredient-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 20px;
+  margin: 9px 0 0;
+  padding-left: 19px;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.daily-summary {
+  margin: 12px 0 0;
+  padding-top: 12px;
+  border-top: 1px solid #dfe8de;
+  color: #405448;
+  font-size: 0.88rem;
+  line-height: 1.55;
+}
+
+.local-badge {
+  padding: 7px 10px;
+  border: 1px solid #cfe0d0;
+  border-radius: 999px;
+  background: var(--soft-green);
+  color: var(--green-dark);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  white-space: nowrap;
+}
+
+.file-field {
+  flex: 1 1 280px;
+}
+
+input[type="file"] {
+  max-width: 100%;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+#confirm-fridge-items {
+  margin-top: 12px;
+}
+
+.suggestions {
+  display: grid;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.suggestion-row {
+  display: grid;
+  grid-template-columns: auto minmax(120px, 1fr) minmax(180px, 1.4fr) minmax(120px, 0.8fr);
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: #fcfdfb;
+}
+
+.check-label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+.check-label input {
+  width: 17px;
+  height: 17px;
+}
+
+.quantity-field {
+  grid-template-columns: 1fr;
+  font-size: 0.78rem;
+}
+
+.shopping-items {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding-left: 20px;
+}
+
+.footer {
+  padding: 32px 4px 0;
+}
+
+.footer p,
+.footer li,
+.fine-print {
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.footer h2 {
+  margin-bottom: 10px;
+}
+
+.fine-print {
+  margin-top: 22px;
+  font-size: 0.8rem;
+}
+
+@media (max-width: 760px) {
+  .shell {
+    padding-top: 24px;
+  }
+
+  .data-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .section-heading {
+    flex-direction: column;
+  }
+
+  .suggestion-row {
+    grid-template-columns: auto 1fr;
+  }
+
+  .suggestion-row select,
+  .suggestion-row .quantity-field {
+    grid-column: 1 / -1;
+  }
+}
