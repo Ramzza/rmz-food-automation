@@ -1,7 +1,10 @@
 node_modules/
+.next/
+out/
 dist/
 dist-server/
 .env
 .env.*
 !.env.example
 coverage/
+*.tsbuildinfo

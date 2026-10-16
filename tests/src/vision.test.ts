@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { identifyFridgeItems, parseVisionResponse } from "./vision.js";
+import { identifyFridgeItems, parseVisionResponse } from "../../src/vision.js";
 
 describe("PRD-005: local fridge-photo recognition", () => {
   it("sends image bytes only to the Ollama loopback endpoint and returns candidate names", async () => {
