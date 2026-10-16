@@ -14,6 +14,24 @@ Local-first weekly meal planning and shopping-list assistant for two adults and 
 
 Requirements: Node.js 22+, npm, and Ollama 0.7.0+ for photo recognition.
 
+### Install Ollama
+
+Install Ollama from a terminal before continuing:
+
+**Windows (PowerShell):**
+
+```powershell
+irm https://ollama.com/install.ps1 | iex
+```
+
+**Ubuntu (Terminal):**
+
+```sh
+curl -fsSL https://ollama.com/install.sh | sh
+```
+
+On Windows, open a new terminal after installation. The `ollama --version` command below verifies the CLI is available. See Ollama's [Windows](https://docs.ollama.com/windows) and [Linux](https://docs.ollama.com/linux) documentation for system requirements and troubleshooting.
+
 ```sh
 npm ci
 cp .env.example .env
