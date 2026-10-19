@@ -42,7 +42,13 @@ npm run dev
 
 Open the local Vite URL printed by npm. The API listens only on `127.0.0.1:3001`; Vite proxies photo requests to it. Set `OLLAMA_VISION_MODEL` to use another locally installed Ollama vision model.
 
-The default model is [Qwen2.5-VL 3B in the Ollama library](https://ollama.com/library/qwen2.5vl:3b). Check the model's license and requirements before redistributing or deploying it.
+The default model is [Qwen2.5-VL 3B in the Ollama library](https://ollama.com/library/qwen2.5vl:3b), using the `qwen2.5vl:3b` tag.
+
+### Model license and deployment requirements
+
+- **Ollama/runtime:** This tag requires Ollama 0.7.0 or newer. The Ollama listing reports a Q4_K_M model with 3.75B parameters and a 3.2 GB download. That is the download size, not a RAM/VRAM minimum; the listing does not specify a minimum. Actual memory use depends on available CPU/GPU resources and workload. Ollama's default context is 4,096 tokens; larger contexts and higher-resolution images can need more resources. See the [Ollama FAQ](https://docs.ollama.com/faq) and [hardware support](https://docs.ollama.com/gpu).
+- **License discrepancy:** The Ollama listing labels its packaged license Apache-2.0, while [Qwen's official model card](https://huggingface.co/Qwen/Qwen2.5-VL-3B-Instruct) identifies the license as `qwen-research` and provides a [Qwen Research License Agreement](https://huggingface.co/Qwen/Qwen2.5-VL-3B-Instruct/blob/main/LICENSE). That agreement permits use only for non-commercial purposes; commercial use requires a separate license from Alibaba Cloud. These published terms conflict, so do not rely on the Ollama label alone: obtain written licensing clarification before redistributing the model or deploying it commercially.
+- **Qwen agreement obligations:** If redistributing under the Qwen agreement, provide recipients with a copy of the agreement, mark modified files, and include its required attribution in a `Notice` file: “Qwen is licensed under the Qwen RESEARCH LICENSE AGREEMENT, Copyright (c) Alibaba Cloud. All Rights Reserved.” The agreement also requires “Built with Qwen” or “Improved using Qwen” in documentation when Qwen materials or outputs are used to create, train, fine-tune, or improve a distributed AI model.
 
 Recipe, catalogue, and pantry JSON are kept in the current browser's local storage. Add data in the app using the documented schemas. For catalogue items, include a product-specific Lidl URL, the current catalogue URL, the Târgu Mureș store URL, catalogue start/end dates, and the unit used by recipes. Recipes need a matching catalogue product ID for each ingredient, portions (`{ "adults": 2, "toddler": 1 }` for family meals; `{ "adults": 0, "toddler": 1 }` for snacks), and sourced nutrition values for adult and toddler portions. The planner refuses incomplete or unverified data instead of fabricating offers or nutrient values.
 
