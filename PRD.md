@@ -40,15 +40,15 @@ Exclude recipes not explicitly marked as reviewed for toddler suitability. Show 
 
 | Requirement | Automated verification |
 |---|---|
-| PRD-001 | `tests/domain.test.ts` and `src/main.test.ts`: seven days, five ordered slots, two adult meal portions, toddler-only snacks, recipe rotation, and browser rendering |
-| PRD-002 | `tests/domain.test.ts` and `src/main.test.ts`: per-person nutrition totals, official-source validation/references, and visible estimates |
-| PRD-003 | `tests/domain.test.ts`: Lidl/product/catalogue/store URL checks, catalogue-date checks, and source links |
-| PRD-004 | `tests/domain.test.ts` and `src/main.test.ts`: quantity aggregation, pantry subtraction, unit validation, and linked shopping items |
-| PRD-005 | `src/vision.test.ts`, `server.test.ts`, and `src/main.test.ts`: Ollama loopback request/response, image validation, and user-reviewed suggestions |
-| PRD-006 | `tests/domain.test.ts` and `src/main.test.ts`: CSV escaping, formula-safe text, line endings, and browser download |
-| PRD-007 | `tests/domain.test.ts`, `server.test.ts`, and `src/main.test.ts`: toddler review, in-memory image handling, and explicit confirmation |
+| PRD-001 | `tests/src/domain.test.ts` and `tests/src/components/meal-planner.test.tsx`: seven days, five ordered slots, two adult meal portions, toddler-only snacks, recipe rotation, and browser rendering |
+| PRD-002 | `tests/src/domain.test.ts` and `tests/src/components/meal-planner.test.tsx`: per-person nutrition totals, official-source validation/references, and visible estimates |
+| PRD-003 | `tests/src/domain.test.ts`: Lidl/product/catalogue/store URL checks, catalogue-date checks, and source links |
+| PRD-004 | `tests/src/domain.test.ts` and `tests/src/components/meal-planner.test.tsx`: quantity aggregation, pantry subtraction, unit validation, and linked shopping items |
+| PRD-005 | `tests/src/vision.test.ts`, `tests/src/app/api/fridge/route.test.ts`, and `tests/src/components/meal-planner.test.tsx`: Ollama loopback request/response, image validation, and user-reviewed suggestions |
+| PRD-006 | `tests/src/domain.test.ts` and `tests/src/components/meal-planner.test.tsx`: CSV escaping, formula-safe text, line endings, and browser download |
+| PRD-007 | `tests/src/domain.test.ts`, `tests/src/app/api/fridge/route.test.ts`, and `tests/src/components/meal-planner.test.tsx`: toddler review, in-memory image handling, and explicit confirmation |
 
-`npm test` runs all mapped tests in CI. `npm run typecheck` and `npm run build` are also required checks.
+`npm test` runs all mapped tests in CI. Tests under `tests/src` mirror their corresponding application modules under `src`. `npm run typecheck` and `npm run build` are also required checks.
 
 ## Official references
 
