@@ -2,6 +2,10 @@
 
 Local-first weekly meal planning and shopping-list assistant for two adults and an 18-month-old child.
 
+## Stack
+
+Next.js App Router, React, TypeScript, and Tailwind CSS. The current interface uses native accessible controls, so it does not need an additional component library.
+
 ## What it does
 
 - Builds seven days of breakfast, lunch, and dinner for the family, plus two toddler-only snacks per day.
@@ -22,7 +26,7 @@ ollama pull qwen2.5vl:3b
 npm run dev
 ```
 
-Open the local Vite URL printed by npm. The API listens only on `127.0.0.1:3001`; Vite proxies photo requests to it. Set `OLLAMA_VISION_MODEL` to use another locally installed Ollama vision model.
+Open <http://127.0.0.1:3000>. Next.js serves both the app and the `/api/fridge` photo endpoint, and binds only to `127.0.0.1`. Set `OLLAMA_VISION_MODEL` to use another locally installed Ollama vision model.
 
 The default model is [Qwen2.5-VL 3B in the Ollama library](https://ollama.com/library/qwen2.5vl:3b). Check the model's license and requirements before redistributing or deploying it.
 
@@ -56,3 +60,5 @@ npm run build
 ```
 
 See [PRD.md](PRD.md) for stable requirements and test mappings, and [ARCHITECTURE.md](ARCHITECTURE.md) for data flow and trust boundaries.
+
+Automated tests live under `tests/src`, mirroring the application modules under `src`.
